@@ -1,6 +1,6 @@
 {
   "name": "aomm-companion",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "Amoo Desktop Pet (Amoo 桌宠), an unofficial offline Windows desktop pet.",
   "license": "MIT",
   "main": "src/desktop/main.cjs",

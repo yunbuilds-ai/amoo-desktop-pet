@@ -4,7 +4,7 @@
 
 An unofficial, open-source desktop pet featuring an orange-gold chibi companion.
 
-**v1.0.0-rc.1 · Community Preview candidate**　[中文](README.md)
+**v1.0.0-rc.2 · Community Preview candidate**　[中文](README.md)
 
 The pet uses transparent animations, reacts to clicks, can be dragged or thrown, and lives in the Windows system tray. AI and network services are off by default.
 

@@ -4,6 +4,7 @@ from hashlib import file_digest
 import json
 from pathlib import Path, PurePosixPath
 from shutil import copyfile, copyfileobj
+from struct import unpack_from
 import subprocess
 from zipfile import ZIP_DEFLATED, ZipFile
 
@@ -44,6 +45,10 @@ def safe_copy(source, destination):
 def asset_files(root, demo=False):
     manifest = json.loads((root/'character/manifest.json').read_bytes())
     names = {'character/manifest.json','character/poster.png','character/tray.png'}
+    if not demo:
+        icon = 'character/app.ico'
+        check_icon((root/icon).read_bytes())
+        names.add(icon)
     if set(manifest['motions'])!=set(ACTIONS) or manifest.get('designSize')!=[480,600]:
         raise ValueError('The pack must supply the eight actions on a 480×600 canvas.')
     for key,row in manifest['motions'].items():
@@ -55,6 +60,23 @@ def asset_files(root, demo=False):
         if not demo:
             names.add(main)
     return sorted(names)
+
+
+def check_icon(data):
+    if len(data) < 6:
+        raise ValueError('Missing Windows ICO header.')
+    reserved, kind, count = unpack_from('<HHH',data)
+    end = 6 + 16 * count
+    if reserved or kind != 1 or end > len(data):
+        raise ValueError('Invalid Windows ICO directory.')
+    sizes = set()
+    for index in range(6,end,16):
+        width,height,_colors,_reserved,_planes,_depth,length,offset = unpack_from('<BBBBHHII',data,index)
+        if width != height or not length or offset < end or offset + length > len(data):
+            raise ValueError('Invalid Windows ICO image entry.')
+        sizes.add(width or 256)
+    if not {16,32,48,256} <= sizes:
+        raise ValueError('Windows ICO must supply 16, 32, 48 and 256 pixel images.')
 
 
 def extract_electron(archive, target):
@@ -79,6 +101,9 @@ def native_exes(stage, compiler):
                    '/target:winexe' if gui else '/target:exe',f'/out:{stage/target}']
         if gui:
             command.append('/r:System.Windows.Forms.dll')
+            icon = stage/'assets/character/app.ico'
+            if icon.is_file():
+                command.append(f'/win32icon:{icon}')
         subprocess.run([*command,str(ROOT/f'src/desktop/{name}.cs')],check=True)
 
 

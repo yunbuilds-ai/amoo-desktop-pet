@@ -292,6 +292,7 @@ else {
     dragThrow = saved.dragThrow === true;
     motion=normalizeMotion(saved.motion);
     win = new BrowserWindow({ ...bounds(saved), frame: false, transparent: true, alwaysOnTop: pinned,
+      icon: path.join(assetRoot,'character','app.ico'),
       skipTaskbar: true, show: false, hasShadow: false,
       webPreferences: { preload: path.join(__dirname, 'preload.cjs'), nodeIntegration: false,
         sandbox: true, contextIsolation: true, webSecurity: true, backgroundThrottling: false } });

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0-rc.2 · Community Preview candidate
+
+- Updated the Windows launcher, window and tray artwork with a multi-resolution application icon.
+
 ## 1.0.0-rc.1 · Community Preview candidate
 
 - The public product name is Amoo Desktop Pet (Amoo 桌宠).

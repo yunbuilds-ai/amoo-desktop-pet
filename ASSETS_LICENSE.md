@@ -2,9 +2,9 @@
 
 `LICENSE` covers the project's original source and documentation. See [third-party notices](THIRD_PARTY_NOTICES.md) for separately licensed software.
 
-角色原画、角色标记、托盘图标、八个动作的透明视频和备用图集，以及含有这些画面的截图和演示，均属于单独的素材发布范围。源码的 MIT 许可不授予这些素材的再分发、修改、再授权、商标或商业使用权。
+角色原画、角色标记、应用及托盘图标、八个动作的透明视频和备用图集，以及含有这些画面的截图和演示，均属于单独的素材发布范围。源码的 MIT 许可不授予这些素材的再分发、修改、再授权、商标或商业使用权。
 
-The orange-gold art pack and recordings containing it are held while redistribution rights in the character, marks and animations are confirmed. The asset rights also apply to stills and video previews.
+The orange-gold art pack, application and tray icons, and recordings containing them are held while redistribution rights in the character, marks, icons and animations are confirmed. The asset rights also apply to stills and video previews.
 
 No audio or font files are bundled. System fonts follow their platform licenses.
 

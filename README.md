@@ -4,7 +4,7 @@
 
 一款橙金 Q 版少女 Windows 桌面宠物，支持透明动画和桌面互动。
 
-**v1.0.0-rc.1 · Community Preview 候选**　[English](README_EN.md)
+**v1.0.0-rc.2 · Community Preview 候选**　[English](README_EN.md)
 
 橙金少女可待在桌面一角。单击可互动，拖动可移动，开启甩动后可以抛掷。八组动作均走同一透明播放器，网络与 AI 服务默认关闭。
 

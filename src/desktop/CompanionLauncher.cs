@@ -8,7 +8,7 @@ using System.Windows.Forms;
 [assembly: AssemblyProduct("Amoo Desktop Pet")]
 [assembly: AssemblyDescription("Amoo 桌宠")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyInformationalVersion("1.0.0-rc.1 Community Preview")]
+[assembly: AssemblyInformationalVersion("1.0.0-rc.2 Community Preview")]
 
 internal static class CompanionLauncher
 {
