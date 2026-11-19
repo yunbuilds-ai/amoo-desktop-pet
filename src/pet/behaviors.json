@@ -1,0 +1,43 @@
+{
+  "idle": [
+    {
+      "action": "idle",
+      "weight": 1
+    }
+  ],
+  "event": [
+    {
+      "action": "happy",
+      "weight": 4
+    },
+    {
+      "action": "greet",
+      "weight": 2
+    },
+    {
+      "action": "tap",
+      "weight": 3
+    },
+    {
+      "action": "confused",
+      "weight": 2
+    }
+  ],
+  "click": [
+    {
+      "action": "tap",
+      "weight": 1
+    }
+  ],
+  "greeting": "greet",
+  "idleIntervalMs": 8500,
+  "eventChance": 1,
+  "nightHours": [
+    23,
+    8
+  ],
+  "morningHours": [
+    8,
+    11
+  ]
+}

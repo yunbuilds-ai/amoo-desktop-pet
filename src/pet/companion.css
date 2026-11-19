@@ -1,0 +1,41 @@
+html, body, main {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+main { position: relative; }
+[hidden] { display: none !important; }
+
+.pet-stage {
+  display: block;
+  position: absolute;
+  top: 29%;
+  left: 0;
+  width: 100%;
+  height: 56%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+}
+
+.pet-stage[data-moving] { cursor: grabbing; }
+.pet-stage:focus-visible { outline: 1px solid #ffc375; outline-offset: -2px; }
+.pet-stage > * {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+.pet-stage[data-composited] > :not(.desktop-presentation) { opacity: 0 !important; }
+.pet-stage[data-composited] > .desktop-presentation { visibility: visible !important; }
